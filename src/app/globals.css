@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #05050A;
+    color: #F8FAFC;
+    /* Advanced Grid + Cinematic Film Noise */
+    background-image: 
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E"),
+      linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), 
+      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 150px 150px, 40px 40px, 40px 40px;
+  }
+}
+
+::selection {
+  background-color: #00F0FF;
+  color: #05050A;
+}
+
+/* Custom Scrollbar for Pro Vibe */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #05050A;
+}
+::-webkit-scrollbar-thumb {
+  background: #131524;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00F0FF;
+}
+
+/* Ultra-Pro Glass Button Shine Animation */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
+  transform: skewX(-25deg);
+  animation: shine 4s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+@keyframes shine {
+  0% { left: -100%; }
+  15% { left: 200%; }
+  100% { left: 200%; }
+}
